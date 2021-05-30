@@ -5,6 +5,7 @@ import com.awesome.flights.model.entity.FlightDetails;
 import java.util.List;
 
 public interface IFlights {
+    List<FlightDetails> getFlightsFromTo(String fromPort, String toPort);
     List<FlightDetails> getDirectFlights(String fromPort, String toPort);
     List<FlightDetails> getFlightsWithHops(String fromPort, String toPort, int numberHops);
 }
