@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/v1/flights")
@@ -26,7 +27,7 @@ public class FlightsController {
 
     @GetMapping("/{fromPort}/{toPort}")
     public ResponseEntity getFlightsFromTo(@PathVariable String fromPort, @PathVariable String toPort){
-        List<FlightDetails> flightDetailsList =  flightsService.getFlightsFromTo(fromPort, toPort);
+        List<Map<String, Map<String, Integer>>> flightDetailsList =  flightsService.getFlightsFromTo(fromPort, toPort);
         return ResponseEntity.status(HttpStatus.OK).body(flightDetailsList);
     }
 }

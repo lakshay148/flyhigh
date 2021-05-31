@@ -10,4 +10,5 @@ import java.util.UUID;
 @Repository
 public interface FlightDetailsRepository extends JpaRepository<FlightDetails, UUID> {
     List<FlightDetails> findAllByFromPortAndToPort(String fromPort, String toPort);
+    List<FlightDetails> findAllByFromPort(String fromPort);
 }
